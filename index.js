@@ -12,7 +12,8 @@ function parseData(data) {
 // function to parse url from a string
 function parseUrl(url) {
     try {
-        const parsedUrl = new URL(url);
+        // Ensure the URL is absolute by providing a base if needed
+        const parsedUrl = new URL(url, "http://example.com");
         return {
             href: parsedUrl.href,
             protocol: parsedUrl.protocol,
